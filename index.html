@@ -1,0 +1,472 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+	<title>Cake & Mackenzie Bog Results</title>
+	<meta name="description" content="The HTML5 Herald">
+	<meta name="author" content="SitePoint">
+
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://drive.google.com/uc?export=download&id=18I4i7cgi__nm7i9nwPFisJSrg1cmzDOJ" />
+	<link rel="stylesheet" href="https://drive.google.com/uc?export=download&id=17r1mSJnG5eA9-VzFakaWbnVL8EKGpRCB" />
+	<link rel="stylesheet" href="https://drive.google.com/uc?export=download&id=15foSrIfOYmMINhj64Hs4iOxgyrk3iBlt" />
+
+	<!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> -->
+	<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
+
+	
+	<script src="https://drive.google.com/uc?export=download&id=18Cxo2sqfbRXRj1FGCi6294FxaH2jE_yX"></script>
+	<script src="https://drive.google.com/uc?export=download&id=17qmtKxX4wKUcj9t0nUsMi_HV5dTRDhrR"></script>
+	<script type="text/javascript" src="https://drive.google.com/uc?export=download&id=18jN29Su65TAeeLPspmtahef6HAErN3Ak"></script>
+	<!-- <script type="text/javascript" src="js\leaflet-zoom-show-hide.js"></script> -->
+
+<!-- https://drive.google.com/uc?export=download&id=17Sq65ZiPw61iHg93g1EUQXmv13Z86OV7 -->
+
+
+
+
+
+
+    <!-- <script src="src\edit\EditToolbar.js"></script> -->
+    <!-- <script src="src\edit\handler\EditToolbar.Edit.js"></script> -->
+    <!-- <script src="src\edit\handler\EditToolbar.Delete.js"></script> -->
+
+    <!-- <script src="src\Control.Draw.js"></script> -->
+
+    <!-- <script src="src\edit\handler\Edit.Poly.js"></script> -->
+    <!-- <script src="src\edit\handler\Edit.SimpleShape.js"></script> -->
+    <!-- <script src="src\edit\handler\Edit.Marker.js"></script> -->
+    <!-- <script src="src\edit\handler\Edit.CircleMarker.js"></script> -->
+    <!-- <script src="src\edit\handler\Edit.Circle.js"></script> -->
+    <!-- <script src="src\edit\handler\Edit.Rectangle.js"></script> -->
+	
+	
+	<!-- Load Esri Leaflet from CDN -->
+	<script src="https://unpkg.com/esri-leaflet@2.3.1/dist/esri-leaflet.js"
+	integrity="sha512-Np+ry4Dro5siJ1HZ0hTwn2jsmu/hMNrYw1EIK9EjsEVbDge4AaQhjeTGRg2ispHg7ZgDMVrSDjNrzH/kAO9Law=="
+	crossorigin=""></script>
+
+	<!-- file layers -->
+	<script src="https://drive.google.com/uc?export=download&id=15XqqTHsz_Tvh9q9moq5wk5RO9tc8IMWQ" type="text/javascript"></script>
+	<script src="https://drive.google.com/uc?export=download&id=1CQ0KEhklYmxHY09a_qJpNzDRX_p2NGcS" type="text/javascript"></script>
+	<script src="https://drive.google.com/uc?export=download&id=1Cd8UiJ3jega514w_CTwanW3O47WDnHBV" type="text/javascript"></script>
+	<script src="https://drive.google.com/uc?export=download&id=1C_63XizflM7UjYPkcHJ-uBw8a6FhGZEB" type="text/javascript"></script>
+
+
+	<style> 
+		 html, body {
+          height: 100%;
+          margin: 0;
+          }
+      #map { min-height:100%;
+             margin: 0;
+           }   
+		
+		#basemaps-wrapper {
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		z-index: 400;
+		background: white;
+		padding: 5px;
+		}
+		
+		.leaflet-tooltip.my-labels {
+		background-color: transparent;
+		border: transparent;
+		box-shadow: none;
+		color:#fff;
+		text-shadow: 0px 0px 3px #000000, 0px 0px 3px #000000, 0px 0px 3px #000000;
+		}
+		.leaflet-tooltip.my-labels:before {
+		background-color: transparent;
+		border: transparent;
+		box-shadow: none;
+		}
+		
+		
+		table.minimalistBlack {
+		  width: 100%;
+		  text-align: center;
+		  border-collapse: collapse;
+		}
+		table.minimalistBlack td, table.minimalistBlack th {
+		  padding: 4px 0px;
+		}
+		table.minimalistBlack tbody td {
+		  font-size: 13px;
+		}
+		table.minimalistBlack tr:nth-child(even) {
+		  background: #E2E2E2;
+		}
+		table.minimalistBlack thead {
+		  background: #CFCFCF;
+		  background: -moz-linear-gradient(top, #dbdbdb 0%, #d3d3d3 66%, #CFCFCF 100%);
+		  background: -webkit-linear-gradient(top, #dbdbdb 0%, #d3d3d3 66%, #CFCFCF 100%);
+		  background: linear-gradient(to bottom, #dbdbdb 0%, #d3d3d3 66%, #CFCFCF 100%);
+		  border-bottom: 3px solid #000000;
+		}
+		table.minimalistBlack thead th {
+		  font-size: 13px;
+		  font-weight: bold;
+		  color: #000000;
+		  text-align: center;
+		}
+		table.minimalistBlack tfoot td {
+		  font-size: 14px;
+		}
+
+	</style>
+</head>
+
+<body>
+
+	<div id="sidebar">
+		<h4>Testhole Data Viewer</h4>
+		<div id="viewer"><p>Hover over a testhole to view data. Click a testhole to view pictures.</p></div>
+		<br>
+
+	</div>
+
+	<div id="map"></div>
+	
+
+	
+	
+
+
+	<!-- Modal -->
+	<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<h5 class="modal-title" id="exampleModalLongTitle">Testhole Images</h5>
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			  <span aria-hidden="true">&times;</span>
+			</button>
+		  </div>
+		  <div class="modal-body">
+			<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+			  <ol class="carousel-indicators">
+				<li id="firstIMG" data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+				<li id="noIMG" data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+				<li id="noIMG" data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+				<li id="noIMG" data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+				<li id="noIMG" data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+				<li id="noIMG" data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+			  </ol>
+			  <div class="carousel-inner">
+				<div id="firstIMG2" class="carousel-item active">
+				  <img id="img1" class="d-block w-100" src="" alt="First slide">
+				    <div class="carousel-caption d-none d-md-block">
+					<h5>Image 1</h5>
+				  </div>
+				</div>
+				<div id="noIMG2" class="carousel-item">
+				  <img id="img2" class="d-block w-100" src="" alt="Second slide">
+				    <div class="carousel-caption d-none d-md-block">
+					<h5>Image 2</h5>
+				  </div>
+				</div>
+				<div id="noIMG2" class="carousel-item">
+				  <img id="img3" class="d-block w-100" src="" alt="Third slide">
+				    <div class="carousel-caption d-none d-md-block">
+					<h5>Image 3</h5>
+				  </div>
+				</div>
+				<div id="noIMG2" class="carousel-item">
+				  <img id="img4" class="d-block w-100" src="" alt="Third slide">
+				    <div class="carousel-caption d-none d-md-block">
+					<h5>Image 4</h5>
+				  </div>
+				</div>
+				<div id="noIMG2" class="carousel-item">
+				  <img id="img5" class="d-block w-100" src="" alt="Third slide">
+				    <div class="carousel-caption d-none d-md-block">
+					<h5>Image 5</h5>
+				  </div>
+				</div>
+				<div id="noIMG2" class="carousel-item">
+				  <img id="img6" class="d-block w-100" src="" alt="Third slide">
+				    <div class="carousel-caption d-none d-md-block">
+					<h5>Image 6</h5>
+				  </div>
+				</div>
+			  </div>
+			  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="sr-only">Previous</span>
+			  </a>
+			  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="sr-only">Next</span>
+			  </a>
+			</div>
+		  </div>
+		  <div class="modal-footer">
+		  </div>
+		</div>
+	  </div>
+	</div>
+	
+	
+	<script>
+		var map = L.map('map', { zoomControl: false, attributionControl: false, condensedAttributionControl: false}).setView([54.494298, -112.934926], 16);
+		map.options.maxZoom = 19;
+		var layer = L.esri.basemapLayer('Imagery').addTo(map);
+
+		
+		<!-- var drawnItems = L.featureGroup().addTo(map); -->
+		
+		
+		<!-- map.addControl(new L.Control.Draw({ -->
+            <!-- edit: { -->
+                <!-- featureGroup: drawnItems, -->
+                <!-- poly : { -->
+                    <!-- allowIntersection : false -->
+                <!-- } -->
+            <!-- }, -->
+            <!-- draw: { -->
+                <!-- polygon : { -->
+                    <!-- allowIntersection: false, -->
+                    <!-- showArea:true -->
+                <!-- } -->
+            <!-- } -->
+        <!-- })); -->
+		
+		var sidebar = L.control.sidebar('sidebar', {
+			closeButton: true,
+			autoPan: false,
+			position: 'left'			
+		});
+
+		map.addControl(sidebar);
+		
+		 setTimeout(function () {
+            sidebar.show();
+        }, 500);
+
+		
+		
+		// set custom emblem and prefix
+		L.control.condensedAttribution({
+		  <!-- emblem: '<div class="emblem-wrap"><img src="img/favicon.png"/></div>', -->
+		}).addTo(map);
+
+	  
+	  <!-- Add Layers  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+		var myStyle = {
+		"color": "#ff3300",
+		"weight": 2,
+		"opacity": 1,
+		"fillOpacity": 0
+		};
+		var bogStyle = {
+		"fillColor": "#b100d9",
+		"weight": 0,
+		"opacity": 1,
+		"fillOpacity": 0.25
+		};
+		var wetStyle = {
+		"fillColor": "#00aaff",
+		"weight": 0,
+		"opacity": 1,
+		"fillOpacity": 0.25
+		};
+		
+		
+		var SME_BOUNDS = L.geoJSON(boundary, {style: myStyle}).addTo(map);
+		var wet = L.geoJSON(wet, {style: wetStyle}).addTo(map);
+		var bog = L.geoJSON(bog, {style: bogStyle}).addTo(map);
+
+		
+		var holeIcon = L.icon({
+			iconUrl: 'https://i.ibb.co/mBLMsD0/hole.png',
+			iconSize:     [20, 20], // size of the icon
+			iconAnchor:   [10, 10], // point of the icon which will correspond to marker's location
+			popupAnchor:  [16, 16] // point from which the popup should open relative to the iconAnchor
+		});
+		
+		function handleFeature(feature, layer) {
+		   layer.on({
+						mouseover: mouseoverfunction,
+						click: clickfunction
+					});
+		}
+
+		
+		function mouseoverfunction(e) {
+			var properties = e.target.feature.properties;
+				document.getElementById("viewer").innerHTML =  "<h5>" + properties.Testhole + "</h5>" + "<h5>Max Depth = " + properties.Max_Depth + "</h5>" +
+				"<table class='minimalistBlack'><thead><tr><th>Depth (cm)</th><th>Von Post</th><th>pH</th></tr></thead><tbody>"+
+				"<tr><td>25</td><td>" + properties._25 + "</td><td>" + properties.pH_25 + "</td><td>"  + 
+				"<tr><td>50</td><td>" + properties._50 + "</td><td>" + properties.pH_50 + "</td><td>" + 
+				"<tr><td>75</td><td>" + properties._75 + "</td><td>" + properties.pH_75 + "</td><td>"  + 
+				"<tr><td>100</td><td>" + properties._100 + "</td><td>" + properties.pH_100 + "</td><td>"  +
+				"<tr><td>125</td><td>" + properties._125 + "</td><td>" + properties.pH_125 + "</td><td>"  + 
+				"<tr><td>150</td><td>" + properties._150 + "</td><td>" + properties.pH_150 + "</td><td>"  + 
+				"<tr><td>175</td><td>" + properties._175 + "</td><td>" + properties.pH_175 + "</td><td>"  + 
+				"<tr><td>200</td><td>" + properties._200 + "</td><td>" + properties.pH_200 + "</td><td>"  + 
+				"<tr><td>225</td><td>" + properties._225 + "</td><td>" + properties.pH_225 + "</td><td>"  +
+				"<tr><td>250</td><td>" + properties._250 + "</td><td>" + properties.pH_250 + "</td><td>"  +
+				"<tr><td>275</td><td>" + properties._275 + "</td><td>" + properties.pH_275 + "</td><td>"  +
+				"<tr><td>300</td><td>" + properties._300 + "</td><td>" + properties.pH_300 + "</td><td>"  +
+				"</table>";				
+		}
+		
+		function clickfunction(e) {
+			$("#exampleModalCenter").modal("show");
+			$('#carouselExampleIndicators').carousel(0);
+
+			var properties = e.target.feature.properties;
+				document.getElementById("exampleModalLongTitle").innerHTML = "Pictures from " + properties.Testhole;
+				document.getElementById("img1").src = properties.Pic1;
+				document.getElementById("img2").src = properties.Pic2;
+				document.getElementById("img3").src = properties.Pic3;
+				document.getElementById("img4").src = properties.Pic4;
+				document.getElementById("img5").src = properties.Pic5;
+				document.getElementById("img6").src = properties.Pic6;
+		}
+		
+
+		var pointLayer = L.geoJSON(null, {
+		  pointToLayer: function(feature,latlng){
+			label = String(feature.properties.Testhole + '</br>' + feature.properties.Max_Depth) // .bindTooltip can't use straight 'feature.properties.attribute'
+			return new L.Marker(latlng, {icon: holeIcon}).bindTooltip(label, {permanent: true, opacity: 1, direction: "right", className: "my-labels"}).openTooltip();
+			},
+			onEachFeature: handleFeature
+		  }).addTo(map);
+		  
+		  pointLayer.addData(points);
+		
+		var wetlands = L.esri.dynamicMapLayer({
+			  url: 'http://maps.ducks.ca/arcgis/rest/services/Public/CWI_Wetlands/MapServer',
+			  f: 'image',
+			  layers: [1],
+			  opacity : 0.5,
+			  transparent: true,
+			  format: 'png24',
+			  zIndex:2
+			});
+		
+				
+		var overlayMaps = {
+			"Test Holes": pointLayer,
+			"Bog Outline": bog,
+			"Fen Area": wet,
+			"Wetlands" : wetlands,
+			<!-- "Drawn Layer" : drawnItems -->
+		};
+		
+		var street =  L.esri.basemapLayer('Streets'),
+			geographic = L.esri.basemapLayer('NationalGeographic'),
+			satellite = L.esri.basemapLayer('Imagery');
+		
+		var baseMaps = {
+			"Street": street,
+			"Geographic": geographic,
+			"Satellite": satellite
+		};
+		
+		L.control.layers(baseMaps, overlayMaps,{collapsed:false}).addTo(map);
+		
+
+        <!-- // Truncate value based on number of decimals -->
+        <!-- var _round = function(num, len) { -->
+            <!-- return Math.round(num*(Math.pow(10, len)))/(Math.pow(10, len)); -->
+        <!-- }; -->
+        <!-- // Helper method to format LatLng object (x.xxxxxx, y.yyyyyy) -->
+        <!-- var strLatLng = function(latlng) { -->
+            <!-- return "("+_round(latlng.lat, 6)+", "+_round(latlng.lng, 6)+")"; -->
+        <!-- }; -->
+
+        <!-- // Generate popup content based on layer type -->
+        <!-- // - Returns HTML string, or null if unknown object -->
+        <!-- var getPopupContent = function(layer) { -->
+            <!-- // Marker - add lat/long -->
+            <!-- if (layer instanceof L.Marker || layer instanceof L.CircleMarker) { -->
+                <!-- return strLatLng(layer.getLatLng()); -->
+            <!-- // Circle - lat/long, radius -->
+            <!-- } else if (layer instanceof L.Circle) { -->
+                <!-- var center = layer.getLatLng(), -->
+                    <!-- radius = layer.getRadius(); -->
+                <!-- return "Center: "+strLatLng(center)+"<br />" -->
+                      <!-- +"Radius: "+_round(radius, 2)+" m"; -->
+            <!-- // Rectangle/Polygon - area -->
+            <!-- } else if (layer instanceof L.Polygon) { -->
+                <!-- var latlngs = layer._defaultShape ? layer._defaultShape() : layer.getLatLngs(), -->
+                    <!-- area = L.GeometryUtil.geodesicArea(latlngs); -->
+                <!-- return "Area: "+L.GeometryUtil.readableArea(area, true); -->
+            <!-- // Polyline - distance -->
+            <!-- } else if (layer instanceof L.Polyline) { -->
+                <!-- var latlngs = layer._defaultShape ? layer._defaultShape() : layer.getLatLngs(), -->
+                    <!-- distance = 0; -->
+                <!-- if (latlngs.length < 2) { -->
+                    <!-- return "Distance: N/A"; -->
+                <!-- } else { -->
+                    <!-- for (var i = 0; i < latlngs.length-1; i++) { -->
+                        <!-- distance += latlngs[i].distanceTo(latlngs[i+1]); -->
+                    <!-- } -->
+                    <!-- return "Distance: "+_round(distance, 2)+" m"; -->
+                <!-- } -->
+            <!-- } -->
+            <!-- return null; -->
+        <!-- }; -->
+
+        <!-- // Object created - bind popup to layer, add to feature group -->
+        <!-- map.on(L.Draw.Event.CREATED, function(event) { -->
+            <!-- var layer = event.layer; -->
+            <!-- var content = getPopupContent(layer); -->
+            <!-- if (content !== null) { -->
+                <!-- layer.bindPopup(content); -->
+            <!-- } -->
+            <!-- drawnItems.addLayer(layer); -->
+        <!-- }); -->
+
+        <!-- // Object(s) edited - update popups -->
+        <!-- map.on(L.Draw.Event.EDITED, function(event) { -->
+            <!-- var layers = event.layers, -->
+                <!-- content = null; -->
+            <!-- layers.eachLayer(function(layer) { -->
+                <!-- content = getPopupContent(layer); -->
+                <!-- if (content !== null) { -->
+                    <!-- layer.setPopupContent(content); -->
+                <!-- } -->
+            <!-- }); -->
+        <!-- }); -->
+
+	  
+	</script>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	    <!-- <script src="https://drive.google.com/uc?export=download&id=17YAk8kRyxlu_gwibPgwUkWfmVfJm7sen "></script> -->
+    <!-- <script src="https://drive.google.com/uc?export=download&id=17YBI9R3p_0Gld0AEMBjZlLRVY8Sqt4UP"></script> -->
+    <!-- <link rel="stylesheet" href="https://drive.google.com/uc?export=download&id=17n06o1B3QhiA4GzauqvtKm483KpHvBU1" /> -->
+
+	<!-- <script src="https://drive.google.com/uc?export=download&id=17UxwwvVkHrSK7tSSr8K_cPVNUBUgfa5-"></script> -->
+    <!-- <script src="https://drive.google.com/uc?export=download&id=17Sq65ZiPw61iHg93g1EUQXmv13Z86OV7"></script> -->
+	
+	<!-- <script src="https://drive.google.com/uc?export=download&id=191A17I2S3NXms8tXZnJ0XD6pLnetUYei"></script> -->
+    <!-- <script src="https://drive.google.com/uc?export=download&id=192UE2BIuWXUWKbcLv7uOAYZWnLYip_f8"></script> -->
+    <!-- <script src="https://drive.google.com/uc?export=download&id=194Q3nnm6ut9r-sPd6fKmVmCk4saDir4Y"></script> -->
+    <!-- <script src="https://drive.google.com/uc?export=download&id=196dZFXHnkCHuvjAoCIiJdohSlrOsALiW"></script> -->
+    <!-- <script src="https://drive.google.com/uc?export=download&id=1972bqcvIoZvHvFKR7-MUlJoVoH6EZkyy"></script> -->
+    <!-- <script src="https://drive.google.com/uc?export=download&id=19TUt_JAKyFde8Z60pfCsq5eB3ubDsdDO"></script> -->
+	<!-- <script src="https://drive.google.com/uc?export=download&id=19gz4VH28I9InUpolk4gpXejSaf01cIkL"></script> -->
+    <!-- <script src="https://drive.google.com/uc?export=download&id=1BHMIb50qQNDcC9EGiWR73hpRhv08Rl8J"></script> -->
+    <!-- <script src="https://drive.google.com/uc?export=download&id=1BJyUntriP1jlkVd6mR91ghVKhm7Gafhu"></script> -->
+    <!-- <script src="https://drive.google.com/uc?export=download&id=1BMQQ2OC550y4IFCSllGwoD0pFGtTXO6D"></script> -->
+    <!-- <script src="https://drive.google.com/uc?export=download&id=1BOXB7Rn443aW6MLgeWG_6UOdYFPeBZSc"></script> -->
+    <!-- <script src="https://drive.google.com/uc?export=download&id=1BUPLR-65j79_AS8Y1WrKSu_cAWJi5ZLh"></script> -->
+    <!-- <script src="https://drive.google.com/uc?export=download&id=1B_h4qvZ_dDXxeRjW7mZbRGo3IYqlbokL"></script> -->
+    <!-- <script src="https://drive.google.com/uc?export=download&id=1BaH1IArwCbi_sWBN8xr8bYbJ2tbynBbc"></script> -->
+    <!-- <script src="https://drive.google.com/uc?export=download&id=1BhDJ4oyQrXdiGWeyqvSk3RBZFtDa9asY"></script> -->
+
+</body>
+</html>
